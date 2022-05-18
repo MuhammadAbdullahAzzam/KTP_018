@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Database</title>
+        <title>Dummy</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- JavaScript Bundle with Popper -->
@@ -56,35 +56,46 @@ and open the template in the editor.
                 </div>
             </div>
         </nav>
-        <div align="center">Database KTP Indonesia</div>
+        <div align="center">Database KTP Indonesia - Dummy</div>
         <a href="/create">Data baru</a>
         <a href="/search">Cari data</a>
-        <div class="table-responsive">
+        <br><br>
+        <div>
+            <div class="table-responsive">
 <!--                <table id="tabelKTP" class="table table-primary table-striped align-middle">-->
                 <table class="table align-middle">
-                    <thead>
-                        <tr>
-                            <th scope="col">NIK</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Tanggal Lahir</th>
-                            <th scope="col">Alamat</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="godata:${goData}">
-                            <td th:text="${godata.noktp}"></td>
-                            <td th:text="${godata.nama}"></td>
-                            <td th:text="${#calendars.format(godata.tgllahir, 'dd-MMM-yyyy')}"></td>
-                            <td th:text="${godata.alamat}"></td>
-                            <td>
-                                <a href="/detail">Detail</a>
-                                <a href="/editktp">Edit</a>
-                                <a href="/delete">Delete</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <thead>
+                    <tr>
+                        <th scope="col">NIK</th>
+                        <th scope="col">Tanggal Lahir</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="godummy:${goDummy}">
+                        <td th:text="${godummy.id}"></td>
+                        <td th:text="${#calenders.format(godummy.tanggal, 'dd-MM-yyyy)}"></td>
+                        <td th:text="${godummy.gambar}"></td>
+                        <td></td>
+<!--                        <th scope="col">ID</th>
+                        <th scope="col">Tanggal Lahir</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="goDummy:${goDummy}">
+                        <td th:text="${goDummy.id}"></td>
+                        <td th:text="${#dates.format(goDummy.tanggal, 'dd-MM-yyyy')}"></td>
+                        <td><img src="data:image/jpeg;base64,( ${goDummy.gambar} )"/></td>
+                        <td><a href="/">Detail</a>
+                            <a href="/">Edit</a>
+                            <a href="/">Delete</a>
+                        </td>-->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
